@@ -6,11 +6,11 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 @ApplicationPath("/rest")
-public class AplicacionesRestConfig extends Application {
+public class RestConfiguracion extends Application {
 
 	public Set<Class<?>> getClasses() {
 		HashSet<Class<?>> classes = new HashSet<Class<?>>();
-		classes.add(AplicacionesRest.class);
+		classes.add(Controlador.class);
 		return classes;
 	}
 
