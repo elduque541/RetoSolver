@@ -26,7 +26,7 @@ public class ServicioEtiqueta {
 	    String respuesta = this.textoIngresado;
 		String cadenaModificada = this.quitarEspaciosEnBlanco(respuesta);
 
-		int numeralesEncabezado = this.buscarNumeral(cadenaModificada);
+		int numeralesEncabezado = this.contarNumeral(cadenaModificada);
 		if (this.buenaSintaxis(cadenaModificada, numeralesEncabezado) && (numeralesEncabezado > 0 && numeralesEncabezado < SIETE)) {
 			respuesta = this.crearEtiqueta(cadenaModificada, numeralesEncabezado);
 		}
@@ -41,7 +41,7 @@ public class ServicioEtiqueta {
 		return texto.substring(contador, texto.length());
 	}
 
-	private int buscarNumeral(String texto) {
+	private int contarNumeral(String texto) {
 		int longitudCadena = texto.length();
 		int contadorNumeral = 0;
 		while (contadorNumeral < longitudCadena) {
@@ -50,7 +50,6 @@ public class ServicioEtiqueta {
 			} else
 				break;
 		}
-
 		return contadorNumeral;
 	}
 
